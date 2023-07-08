@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import Modal from "@/components/Modal";
+import AuthModal from "@/components/AuthModal";
 
 
 const ModalProvider = () => {
@@ -20,14 +20,7 @@ const ModalProvider = () => {
 
   return (
     <>
-        <Modal
-          title="test modal"
-          description="description"
-          isOpen
-          onChange={() => {}}
-        >
-          test children
-        </Modal>
+      <AuthModal />
     </>
   );
 }
