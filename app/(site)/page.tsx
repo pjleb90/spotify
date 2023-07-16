@@ -1,7 +1,14 @@
 import Header from "@/components/Header"
 import ListItem from "@/components/ListItem"
+import PageContent from "./components/PageContent";
 
-export default function Home() {
+import getSongs from "@/actions/getSongs";
+
+export const revalidate = 0;    //  page will not be cached and data will always be up to date
+
+export default async function Home() {
+  const songs = await getSongs();
+
   return (
         <div className="
           bg-neutral-900
@@ -48,7 +55,7 @@ export default function Home() {
           </h1>
         </div>
         <div>
-          List of songs
+          <PageContent songs={songs} />
         </div>
       </div>
     </div>
